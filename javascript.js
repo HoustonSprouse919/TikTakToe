@@ -11,3 +11,26 @@ function gameFlow(){
 }
 
 console.log(gameFlow())
+
+function displayGameBoard(){ //this is here to show all of our books on the page using dom manipulation
+    const container = document.querySelector('.container'); //selects container we are using
+    container.replaceChildren(); //clears the container every time we call it so no duplicates
+    for(var i = 0; i< gameBoard.length; i++){ 
+    const content = document.createElement('div'); 
+    content.classList.add('content')
+    content.textContent= gameBoard[i] //adds book info 
+    content.setAttribute("id", i)
+    content.setAttribute("class", "box")
+    content.addEventListener("click", function(marker){ //when button is clicked toggles between read and not read
+         if(gameBoard[div.id] == ""){
+            gameBoard[div.id] = marker;
+         } else if (gameBoard[div.id] == "O" | "X"){
+            console.log("already used")
+         }
+         displayBooks();
+      });
+    
+    container.appendChild(content);
+        }
+    }
+    displayGameBoard();
