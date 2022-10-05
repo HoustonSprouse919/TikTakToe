@@ -1,16 +1,37 @@
-let gameBoard = ["x","x","x","x","x","x","x","x","x"];
+let gameBoard = ["","","","","","","","",""];
+let player1= new player("Houston", "X")
+let player2= new player("Other guy", "O")
+let currentPlayer = player1;
 function player(name, marker){ //constructor for new book objects
     this.name = name
     this.marker = marker
 }
 function gameFlow(){
-
     if(gameBoard[0] == gameBoard[1] && gameBoard[2]){
-        return("player " + gameBoard[0]+" wins!")
+        return("player " + currentPlayer.name+" wins!")
+    } else if(gameBoard[0] == gameBoard[3] && gameBoard[6]){
+        return("player " + currentPlayer.name+" wins!")
+    }else if(gameBoard[0] == gameBoard[4] && gameBoard[8]){
+        return("player " + currentPlayer.name+" wins!")
+    }else if(gameBoard[3] == gameBoard[4] && gameBoard[5]){
+        return("player " + currentPlayer.name+" wins!")
+    }else if(gameBoard[6] == gameBoard[7] && gameBoard[8]){
+        return("player " + currentPlayer.name+" wins!")
+    }else if(gameBoard[2] == gameBoard[5] && gameBoard[8]){
+        return("player " + currentPlayer.name+" wins!")
+    }else if(gameBoard[2] == gameBoard[4] && gameBoard[6]){
+        return("player " + currentPlayer.name+" wins!")
+    }else if(gameBoard[1] == gameBoard[4] && gameBoard[7]){
+        return("player " + currentPlayer.name+" wins!")
+    } else{
+        if (currentPlayer == player1){
+            currentPlayer = player2;
+        } else if(currentPlayer == player2){
+            currentPlayer = player1;
+        }
     }
 }
 
-console.log(gameFlow())
 
 function displayGameBoard(){ //this is here to show all of our books on the page using dom manipulation
     const container = document.querySelector('.container'); //selects container we are using
@@ -21,15 +42,20 @@ function displayGameBoard(){ //this is here to show all of our books on the page
     content.textContent= gameBoard[i] //adds book info 
     content.setAttribute("id", i)
     content.setAttribute("class", "box")
-    content.addEventListener("click", function(marker){ //when button is clicked toggles between read and not read
-         if(gameBoard[div.id] == ""){
-            gameBoard[div.id] = marker;
-         } else if (gameBoard[div.id] == "O" | "X"){
+
+
+    content.addEventListener("click", function(){ //when button is clicked toggles between read and not read
+         if(gameBoard[content.id] == ""){
+            gameBoard[content.id] = "X";
+         } else if (gameBoard[content.id] == "O" | "X"){
             console.log("already used")
          }
-         displayBooks();
+         displayGameBoard();
+         console.log(gameFlow("1"))
       });
     
+
+
     container.appendChild(content);
         }
     }
