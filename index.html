@@ -19,6 +19,29 @@
         <div class="box" id = "8">X</div>
         <div class="box" id = "9">X</div>
       </div>
+
+      <div class ="form-popup" id = "myForm">
+        <form class = "form-container">
+            <h1>Please input players!</h1>
+            <div id = "player1Info">
+            <label for="player1Name"><b>Player1 Name</b></label>
+            <input type="text" placeholder="Please enter name here" name="player1Name" required>
+            <p>Is player1 X or O?</p>
+            <input type="radio" id="X" name="player1Marker" value="X">
+            <label for="html">X</label><br>
+  
+            <input type="radio" id="0" name="player1Marker" value="O">
+            <label for="html">O</label><br>            
+        </div>
+
+        <div id = "player2Info">
+            <label for="player2 Name"><b>Player2 Name</b></label>
+            <input type="text" placeholder="Please enter name here" name="player2 Name" required>         
+        </div>
+        <button type="button" class="btn" onclick="let player3= player(player1Name,player1Marker,0);closeForm()">Continue!</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
 </body>
 <script src="javascript.js"></script>
 </html>

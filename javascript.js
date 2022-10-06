@@ -1,12 +1,17 @@
 let gameBoard = [" "," "," "," "," "," "," "," "," "];
-let player1= new player("Houston", "X", 0)
-let player2= new player("Other guy", "O", 0)
-let currentPlayer = player1;
-function player(name, marker, points){ //constructor for new book objects
+/*function player(name, marker, points){ //constructor for new book objects
     this.name = name
     this.marker = marker
     this.points = points
-}
+} */
+let player = (name, marker, points) => { //factory for making new players
+    return { name, marker, points};
+  };
+let player1= player("Houston", "X", 0)
+let player2= player("Other guy", "O", 0)
+let player3= player("john","X",0)
+let currentPlayer = player1;
+const boardLogic= (() => { 
 function winStatus(){
     if((gameBoard[0] == gameBoard[1]) & (gameBoard[0] ==gameBoard[2]) & (gameBoard[0] != " ")){
         gameBoard = [" "," "," "," "," "," "," "," "," "];
@@ -62,6 +67,7 @@ function winStatus(){
     }
     console.log(player1)
     console.log(player2)
+    console.log(player3)
 }
 
 
@@ -96,4 +102,7 @@ function displayGameBoard(){ //this is here to show our array that makes up the 
         }
     }
     displayGameBoard();
-
+})();
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
