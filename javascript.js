@@ -9,22 +9,48 @@ function player(name, marker, points){ //constructor for new book objects
 }
 function winStatus(){
     if((gameBoard[0] == gameBoard[1]) & (gameBoard[0] ==gameBoard[2]) & (gameBoard[0] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        currentPlayer.points += 1;
+        displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
   } else if((gameBoard[0] == gameBoard[3]) & (gameBoard[0] == gameBoard[6]) & (gameBoard[0] != " ")){
+    gameBoard = [" "," "," "," "," "," "," "," "," "];
+    currentPlayer.points += 1;
+    displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
      }else if((gameBoard[0] == gameBoard[4]) & (gameBoard[0] == gameBoard[8]) & (gameBoard[0] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        currentPlayer.points += 1;
+        displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
     }else if((gameBoard[3] == gameBoard[4]) & (gameBoard[3] == gameBoard[5]) & (gameBoard[3] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        currentPlayer.points += 1;
+        displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
      }else if((gameBoard[6] == gameBoard[7]) & (gameBoard[6] == gameBoard[8]) & (gameBoard[6] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        currentPlayer.points += 1;
+        displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
     }else if((gameBoard[2] == gameBoard[5]) & (gameBoard[2] == gameBoard[8]) & (gameBoard[2] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        currentPlayer.points += 1;
+        displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
     }else if((gameBoard[2] == gameBoard[4]) & (gameBoard[2] == gameBoard[6]) & (gameBoard[2] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        currentPlayer.points += 1;
+        displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
     }else if((gameBoard[1] == gameBoard[4]) & (gameBoard[1] == gameBoard[7]) & (gameBoard[1] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        currentPlayer.points += 1;
+        displayGameBoard()
         return("player " + currentPlayer.name+" wins!")
      }else if((gameBoard[0] != " ") & (gameBoard[1] != " ") & (gameBoard[2] != " ") & (gameBoard[3] != " ") & (gameBoard[4] != " ") & (gameBoard[5] != " ") & (gameBoard[6] != " ") & (gameBoard[7] != " ") & (gameBoard[8] != " ")){
+        gameBoard = [" "," "," "," "," "," "," "," "," "];
+        displayGameBoard()
         return("It's a tie")
         
     } else{
@@ -34,6 +60,8 @@ function winStatus(){
             currentPlayer = player1;
         }
     }
+    console.log(player1)
+    console.log(player2)
 }
 
 
