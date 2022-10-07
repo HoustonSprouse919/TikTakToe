@@ -115,8 +115,8 @@ function closeForm() {
     player1.name = player1Name;
     player1.marker = player1Marker;
     player2.name = player2Name;
-    if(player1Marker = "0"){
-        player2.marker = "X";
-        gameBoard = [" "," "," "," "," "," "," "," "," "];
+    if(player1Marker =="O"){
+        player2.marker = "X"
     }
+    gameBoard = [" "," "," "," "," "," "," "," "," "];
   }
