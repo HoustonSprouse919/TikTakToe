@@ -36,9 +36,9 @@
 
         <div id = "player2Info">
             <label for="player2 Name"><b>Player2 Name</b></label>
-            <input type="text" placeholder="Please enter name here" name="player2 Name" required>         
+            <input type="text" placeholder="Please enter name here" name="player2Name" required>         
         </div>
-        <button type="button" class="btn" onclick="let player3= player(player1Name,player1Marker,0);closeForm()">Continue!</button>
+        <button type="button" class="btn" onclick="changePlayerInfo(player1Name.value,player1Marker.value,player2Name.value);closeForm()">Continue!</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>

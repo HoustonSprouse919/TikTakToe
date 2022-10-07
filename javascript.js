@@ -7,12 +7,11 @@ let gameBoard = [" "," "," "," "," "," "," "," "," "];
 let player = (name, marker, points) => { //factory for making new players
     return { name, marker, points};
   };
-let player1= player("Houston", "X", 0)
+let player1= player("You", "X", 0)
 let player2= player("Other guy", "O", 0)
-let player3= player("john","X",0)
 let currentPlayer = player1;
 const boardLogic= (() => { 
-function winStatus(){
+function winStatus(){    //basically just the logic to see if it goes across 3 in a row on the board
     if((gameBoard[0] == gameBoard[1]) & (gameBoard[0] ==gameBoard[2]) & (gameBoard[0] != " ")){
         gameBoard = [" "," "," "," "," "," "," "," "," "];
         currentPlayer.points += 1;
@@ -93,16 +92,21 @@ function displayGameBoard(){ //this is here to show our array that makes up the 
          displayGameBoard();
          console.log(winStatus())
       });
-    function winner(){
-
-    }
-
-
     container.appendChild(content);
         }
     }
     displayGameBoard();
 })();
+
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
+  }
+
+  function changePlayerInfo(player1Name,player1Marker,player2Name){
+    player1.name = player1Name;
+    player1.marker = player1Marker;
+    player2.name = player2Name;
+    if(player1Marker = "0"){
+        player2.marker = "X";
+    }
   }
